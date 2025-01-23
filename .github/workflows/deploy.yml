@@ -67,11 +67,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Set up kubectl with EKS credentials
-        uses: aws-actions/eks-kubeconfig-action@v1
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v2.0
         with:
-          region: ${{ secrets.AWS_REGION }}
-          cluster-name: nodejs-eks-cluster
+          version: 'v1.24.0' # default is latest stable
+        id: install
 
       - name: Apply Kubernetes Deployment and Service
         run: |
