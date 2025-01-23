@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello, World! This is Node.js on AWS EKS!');
+  res.send('Hello, World! This is Node.js on AWS EKS again!');
 });
 
 const PORT = process.env.PORT || 3000;
