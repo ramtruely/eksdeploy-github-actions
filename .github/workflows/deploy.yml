@@ -72,6 +72,8 @@ jobs:
         with:
           region: ${{ secrets.AWS_REGION }}
           cluster-name: nodejs-eks-cluster
+      - name: Update kube config
+        run: aws eks update-kubeconfig --name nodejs-eks-app
 
       - name: Apply Kubernetes Deployment and Service
         run: |
