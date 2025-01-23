@@ -74,7 +74,7 @@ jobs:
         id: install
 
       - name: Update kube config
-        run: aws eks update-kubeconfig --name nodejs-eks-app
+        run: aws eks update-kubeconfig --name nodejs-eks-cluster
 
       - name: Apply Kubernetes Deployment and Service
         run: |
