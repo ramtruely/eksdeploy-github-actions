@@ -16,5 +16,5 @@ spec:
       - name: nodejs-eks-app
         image: 266735801425.dkr.ecr.us-east-1.amazonaws.com/eks-github-actions-repo:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
 
