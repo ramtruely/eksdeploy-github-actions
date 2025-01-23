@@ -67,13 +67,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Set up kubectl
-        uses: aws-actions/configure-kubeconfig@v2
+      - name: Set up kubectl with EKS credentials
+        uses: aws-actions/eks-kubeconfig-action@v1
         with:
           region: ${{ secrets.AWS_REGION }}
           cluster-name: nodejs-eks-cluster
-      - name: Update kube config
-        run: aws eks update-kubeconfig --name nodejs-eks-app
 
       - name: Apply Kubernetes Deployment and Service
         run: |
